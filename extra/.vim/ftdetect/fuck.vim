@@ -1,0 +1,1 @@
+autocmd BufRead,BufNewFile *.fuck set filetype=fuck
