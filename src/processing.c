@@ -25,11 +25,6 @@ void process_line(char *line) {
     keyword_len = strlen(p);
     bytes_to_process -= keyword_len + 1;
 
-    /* TODO
-     * - Find a way to build the binary numbers (bitwise operations)
-     * - Pad the storage printing numbers to a multiple of 8
-     */
-
     if (keyword_pos == 1 && bytes_to_process != 0) {
       if (strncmp(p, "fuckers", 7) == 0 && keyword_len == 7) {
         flags |= STORAGE_1;
@@ -54,7 +49,6 @@ void process_line(char *line) {
       }
     } else if (strncmp(p, "motherfucker", 12) == 0 && keyword_len == 12) {
       line_val = line_val << 1 | 0x01;
-      /* Pad 0's until the value is a multiple of 8 */
     } else if (strncmp(p, "fuckers", 7) == 0 && keyword_len == 7) {
       line_val = line_val << bin_len(fuckers, 0) | fuckers;
     } else if (strncmp(p, "motherfuckers", 13) == 0 && keyword_len == 13) {
